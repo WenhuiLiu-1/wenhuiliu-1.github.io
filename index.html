@@ -3,116 +3,390 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Wenhui Liu | Academic Homepage</title>
+  <meta name="description"
+        content="Academic homepage of Wenhui Liu,
+        undergraduate researcher at Peking University,
+        focusing on Medical AI and Foundation Models.">
+
   <style>
-    * { box-sizing: border-box; }
+    :root {
+      --primary: #17466d;
+      --accent: #2874a6;
+      --text: #263648;
+      --muted: #667789;
+      --line: #e4e9ee;
+      --background: #ffffff;
+      --soft: #f3f7fb;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      color: #283548;
+      font-family: -apple-system, BlinkMacSystemFont,
+                   "Segoe UI", Arial, sans-serif;
+      background: var(--background);
+      color: var(--text);
       line-height: 1.8;
-      background: #fff;
     }
-    .container {
-      max-width: 850px;
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    nav {
+      border-bottom: 1px solid var(--line);
+      background: white;
+    }
+
+    .nav-container {
+      max-width: 960px;
       margin: auto;
-      padding: 50px 24px;
+      padding: 15px 25px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
     }
+
+    .nav-name {
+      font-size: 19px;
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    .nav-links a {
+      margin-left: 18px;
+      font-size: 14px;
+      color: var(--text);
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 50px 25px;
+    }
+
+    .profile {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+      margin-bottom: 40px;
+    }
+
+    .avatar {
+      flex-shrink: 0;
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      background: var(--soft);
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 35px;
+      font-weight: 700;
+    }
+
     h1 {
-      font-size: 36px;
-      color: #183a60;
-      margin-bottom: 0;
+      color: var(--primary);
+      font-size: 34px;
+      margin: 0 0 5px;
     }
+
     h2 {
-      color: #183a60;
+      color: var(--primary);
       font-size: 22px;
-      border-bottom: 1px solid #ddd;
+      border-bottom: 1px solid var(--line);
       padding-bottom: 8px;
-      margin-top: 36px;
+      margin-top: 42px;
+      margin-bottom: 18px;
     }
-    .subtitle { color: #66758a; }
-    a { color: #1766a4; }
-    .tags span {
-      display: inline-block;
-      background: #edf3f9;
-      color: #285781;
-      padding: 4px 12px;
+
+    .subtitle {
+      color: var(--muted);
+      margin: 4px 0;
+    }
+
+    .research-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .tag {
+      background: var(--soft);
+      color: var(--primary);
+      padding: 5px 13px;
       border-radius: 6px;
-      margin: 4px;
       font-size: 14px;
     }
+
+    .entry {
+      margin: 22px 0;
+    }
+
+    .entry-title {
+      font-size: 17px;
+      font-weight: 650;
+      color: var(--text);
+    }
+
+    .entry-meta {
+      color: var(--muted);
+      font-size: 14px;
+      margin: 4px 0;
+    }
+
+    .project {
+      background: var(--soft);
+      border-radius: 8px;
+      padding: 20px 24px;
+      margin-top: 16px;
+    }
+
+    .project h3 {
+      color: var(--primary);
+      margin: 0 0 10px;
+    }
+
     footer {
-      margin-top: 60px;
-      color: #888;
+      margin-top: 65px;
+      padding-top: 20px;
+      border-top: 1px solid var(--line);
       font-size: 13px;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    @media (max-width: 600px) {
+      .profile {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .nav-links a {
+        margin: 0 15px 0 0;
+      }
+
+      h1 {
+        font-size: 29px;
+      }
+
+      .container {
+        padding: 30px 20px;
+      }
     }
   </style>
 </head>
+
 <body>
+
+  <!-- Navigation -->
+  <nav>
+    <div class="nav-container">
+      <div class="nav-name">Wenhui Liu</div>
+
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#research">Research</a>
+        <a href="#publications">Publications</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
   <main class="container">
 
-    <h1>Wenhui Liu</h1>
-    <p class="subtitle">
-      Undergraduate Researcher<br>
-      Peking University
-    </p>
+    <!-- Profile -->
+    <section class="profile">
 
-    <h2>About Me</h2>
-    <p>
-      I am an undergraduate researcher at Peking
-      University, with research interests in
-      medical artificial intelligence, physiological
-      signal analysis, and biomedical foundation models.
-    </p>
+      <div class="avatar">WL</div>
 
-    <h2>Research Interests</h2>
-    <div class="tags">
-      <span>Medical AI</span>
-      <span>Foundation Models</span>
-      <span>ECG Analysis</span>
-      <span>Machine Learning</span>
-      <span>Biomedical Signal Processing</span>
-    </div>
+      <div>
+        <h1>Wenhui Liu</h1>
 
-    <h2>Education</h2>
-    <p>
-      <strong>Peking University</strong><br>
-      Undergraduate Student
-    </p>
+        <p class="subtitle">
+          Undergraduate Researcher
+        </p>
 
-    <h2>Research Experience</h2>
-    <p>
-      <strong>ECG-LabWAS</strong><br>
-      Laboratory-wide screening of clinical
-      abnormalities using a fine-tuned single-lead
-      ECG foundation model, including multi-task
-      learning and external validation.
-    </p>
+        <p class="subtitle">
+          Peking University Health Science Center
+        </p>
 
-    <h2>Publications & Manuscripts</h2>
-    <p>
-      <strong>
-        ECG-LabWAS: A Laboratory-Wide Association
-        Study Using a Fine-Tuned Single-Lead
-        Electrocardiogram Foundation Model
-      </strong><br>
-      Wenhui Liu et al.<br>
-      Manuscript, 2026.
-    </p>
+        <p>
+          <a href="https://github.com/Wenhui-777"
+             target="_blank" rel="noopener noreferrer">
+            GitHub
+          </a>
+        </p>
+      </div>
 
-    <h2>Contact</h2>
-    <p>
-      GitHub:
-      <a href="https://github.com/YOUR_USERNAME">
-        GitHub Profile
-      </a>
-    </p>
+    </section>
+
+    <!-- About -->
+    <section id="about">
+      <h2>About Me</h2>
+
+      <p>
+        I am an undergraduate researcher at
+        Peking University, focusing on medical
+        artificial intelligence and biomedical
+        signal analysis.
+      </p>
+
+      <p>
+        My research interests include biomedical
+        foundation models, representation learning,
+        physiological signal processing, and
+        generalizable machine learning methods
+        for healthcare applications.
+      </p>
+
+      <p>
+        I am particularly interested in developing
+        robust and reliable AI methods that can
+        bridge machine learning and clinical medicine.
+      </p>
+    </section>
+
+    <!-- Education -->
+    <section id="education">
+      <h2>Education</h2>
+
+      <div class="entry">
+        <div class="entry-title">
+          Peking University
+        </div>
+
+        <div class="entry-meta">
+          Undergraduate Studies
+        </div>
+
+        <p>
+          Biomedical Engineering and
+          Medical Artificial Intelligence
+        </p>
+      </div>
+    </section>
+
+    <!-- Research Interests -->
+    <section id="research">
+      <h2>Research Interests</h2>
+
+      <div class="research-tags">
+        <span class="tag">Medical AI</span>
+        <span class="tag">Foundation Models</span>
+        <span class="tag">Representation Learning</span>
+        <span class="tag">ECG Analysis</span>
+        <span class="tag">Biomedical Signal Processing</span>
+        <span class="tag">Multimodal Learning</span>
+      </div>
+    </section>
+
+    <!-- Publications -->
+    <section id="publications">
+      <h2>Publications & Manuscripts</h2>
+
+      <div class="entry">
+        <div class="entry-title">
+          ECG-LabWAS: A Laboratory-Wide
+          Association Study Using a Fine-Tuned
+          Single-Lead Electrocardiogram
+          Foundation Model
+        </div>
+
+        <div class="entry-meta">
+          Wenhui Liu et al. | 2026
+        </div>
+
+        <p>
+          <strong>Status:</strong> Manuscript
+        </p>
+
+        <p>
+          First-listed co-first author.
+          Contributed to study design,
+          model development, and
+          manuscript preparation.
+        </p>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects">
+      <h2>Research Projects</h2>
+
+      <div class="project">
+        <h3>ECG-LabWAS</h3>
+
+        <p>
+          A laboratory-wide association study
+          using a fine-tuned single-lead ECG
+          foundation model.
+        </p>
+
+        <p>
+          The study investigates associations
+          between ECG signals and laboratory
+          abnormalities through multi-task
+          learning and independent
+          external validation.
+        </p>
+
+        <p>
+          <strong>Keywords:</strong>
+          ECG Foundation Models,
+          Multi-task Learning,
+          External Validation,
+          Clinical AI.
+        </p>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+      <h2>Contact</h2>
+
+      <p>
+        <strong>Affiliation:</strong>
+        Peking University Health Science Center
+      </p>
+
+      <p>
+        <strong>GitHub:</strong>
+        <a href="https://github.com/Wenhui-777">
+          github.com/Wenhui-777
+        </a>
+      </p>
+
+      <p>
+        <strong>Academic Email:</strong>
+        Add your public academic email here
+      </p>
+    </section>
 
     <footer>
-      © 2026 Wenhui Liu
+      © 2026 Wenhui Liu.
+      Built with GitHub Pages.
     </footer>
+
   </main>
+
 </body>
 </html>
-
