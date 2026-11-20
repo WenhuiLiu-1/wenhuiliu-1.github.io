@@ -3,13 +3,18 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
 
   <title>Wenhui Liu | Academic Homepage</title>
+
   <meta name="description"
         content="Academic homepage of Wenhui Liu,
-        undergraduate researcher at Peking University,
-        focusing on Medical AI and Foundation Models.">
+        an undergraduate student majoring in
+        Medical Imaging Technology at
+        Peking University Health Science Center.
+        Research interests include Medical AI,
+        Foundation Models, and Machine Learning.">
 
   <style>
     :root {
@@ -20,6 +25,7 @@
       --line: #e4e9ee;
       --background: #ffffff;
       --soft: #f3f7fb;
+      --white: #ffffff;
     }
 
     * {
@@ -32,25 +38,32 @@
 
     body {
       margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont,
-                   "Segoe UI", Arial, sans-serif;
+      font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Arial,
+        sans-serif;
       background: var(--background);
       color: var(--text);
       line-height: 1.8;
+      font-size: 16px;
     }
 
     a {
       color: var(--accent);
       text-decoration: none;
+      transition: color 0.2s;
     }
 
     a:hover {
+      color: var(--primary);
       text-decoration: underline;
     }
 
     nav {
+      background: var(--white);
       border-bottom: 1px solid var(--line);
-      background: white;
     }
 
     .nav-container {
@@ -70,8 +83,13 @@
       color: var(--primary);
     }
 
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+    }
+
     .nav-links a {
-      margin-left: 18px;
       font-size: 14px;
       color: var(--text);
     }
@@ -82,42 +100,74 @@
       padding: 50px 25px;
     }
 
+    /* Profile */
+
     .profile {
       display: flex;
       align-items: center;
-      gap: 25px;
-      margin-bottom: 40px;
+      gap: 30px;
+      margin-bottom: 45px;
     }
 
     .avatar {
-      width: 140px;
-      height: 140px;
+      width: 150px;
+      height: 150px;
       border-radius: 50%;
       object-fit: cover;
       object-position: center;
       flex-shrink: 0;
-      border: 3px solid #e4e9ee;
+      border: 3px solid var(--line);
     }
 
     h1 {
       color: var(--primary);
-      font-size: 34px;
-      margin: 0 0 5px;
+      font-size: 36px;
+      margin: 0 0 6px;
+      line-height: 1.3;
     }
 
     h2 {
       color: var(--primary);
-      font-size: 22px;
+      font-size: 23px;
+      font-weight: 650;
       border-bottom: 1px solid var(--line);
-      padding-bottom: 8px;
-      margin-top: 42px;
-      margin-bottom: 18px;
+      padding-bottom: 9px;
+      margin-top: 45px;
+      margin-bottom: 20px;
+      scroll-margin-top: 20px;
+    }
+
+    h3 {
+      color: var(--primary);
+      font-size: 18px;
+      margin: 0 0 10px;
+    }
+
+    p {
+      margin: 10px 0 15px;
     }
 
     .subtitle {
       color: var(--muted);
-      margin: 4px 0;
+      margin: 3px 0;
     }
+
+    .profile-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 15px;
+    }
+
+    .profile-links a {
+      display: inline-block;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      padding: 5px 13px;
+      font-size: 14px;
+    }
+
+    /* Research Interests */
 
     .research-tags {
       display: flex;
@@ -133,6 +183,8 @@
       font-size: 14px;
     }
 
+    /* Entries */
+
     .entry {
       margin: 22px 0;
     }
@@ -141,25 +193,70 @@
       font-size: 17px;
       font-weight: 650;
       color: var(--text);
+      line-height: 1.55;
     }
 
     .entry-meta {
       color: var(--muted);
       font-size: 14px;
-      margin: 4px 0;
+      margin: 6px 0;
     }
+
+    .author-name {
+      font-weight: 700;
+    }
+
+    .status {
+      display: inline-block;
+      background: #edf3f9;
+      color: var(--primary);
+      padding: 3px 10px;
+      border-radius: 5px;
+      font-size: 13px;
+      margin-top: 6px;
+    }
+
+    /* Research Experience */
+
+    .experience {
+      margin: 22px 0;
+      padding-left: 18px;
+      border-left: 3px solid var(--line);
+    }
+
+    .experience ul {
+      padding-left: 20px;
+    }
+
+    .experience li {
+      margin-bottom: 7px;
+    }
+
+    /* Research Projects */
 
     .project {
       background: var(--soft);
-      border-radius: 8px;
-      padding: 20px 24px;
-      margin-top: 16px;
+      border-radius: 9px;
+      padding: 22px 26px;
+      margin-top: 18px;
     }
 
-    .project h3 {
-      color: var(--primary);
-      margin: 0 0 10px;
+    .project ul {
+      padding-left: 20px;
+      margin-bottom: 10px;
     }
+
+    .project li {
+      margin-bottom: 8px;
+    }
+
+    /* Contact */
+
+    .contact-item {
+      margin-bottom: 12px;
+    }
+
+    /* Footer */
 
     footer {
       margin-top: 65px;
@@ -170,221 +267,513 @@
       text-align: center;
     }
 
+    /* Mobile Responsive Design */
+
     @media (max-width: 600px) {
+
+      .container {
+        padding: 28px 20px;
+      }
+
       .profile {
         flex-direction: column;
         align-items: flex-start;
+        gap: 18px;
       }
 
-      .nav-links a {
-        margin: 0 15px 0 0;
+      .avatar {
+        width: 125px;
+        height: 125px;
       }
 
       h1 {
-        font-size: 29px;
+        font-size: 30px;
       }
 
-      .container {
-        padding: 30px 20px;
+      h2 {
+        font-size: 21px;
+      }
+
+      .nav-container {
+        padding: 15px 20px;
+      }
+
+      .nav-links {
+        gap: 12px;
+      }
+
+      .nav-links a {
+        font-size: 13px;
+      }
+
+      .project {
+        padding: 18px;
       }
     }
+
   </style>
 </head>
 
 <body>
 
   <!-- Navigation -->
+
   <nav>
     <div class="nav-container">
-      <div class="nav-name">Wenhui Liu</div>
+
+      <a class="nav-name" href="#top">
+        Wenhui Liu
+      </a>
 
       <div class="nav-links">
         <a href="#about">About</a>
+        <a href="#education">Education</a>
         <a href="#research">Research</a>
         <a href="#publications">Publications</a>
+        <a href="#projects">Projects</a>
         <a href="#contact">Contact</a>
       </div>
+
     </div>
   </nav>
 
-  <main class="container">
+  <main class="container" id="top">
 
-    <!-- Profile -->
+    <!-- Personal Profile -->
+
     <section class="profile">
 
       <img
         class="avatar"
         src="profile.jpg"
-        alt="Wenhui Liu"
+        alt="Portrait of Wenhui Liu"
       >
 
       <div>
+
         <h1>Wenhui Liu</h1>
 
         <p class="subtitle">
-          Undergraduate Researcher
+          Undergraduate Student & Researcher
+        </p>
+
+        <p class="subtitle">
+          Medical Imaging Technology
         </p>
 
         <p class="subtitle">
           Peking University Health Science Center
         </p>
 
-        <p>
+        <div class="profile-links">
+
           <a href="https://github.com/Wenhuiliu-1"
-             target="_blank" rel="noopener noreferrer">
+             target="_blank"
+             rel="noopener noreferrer">
             GitHub
           </a>
-        </p>
+
+          <!--
+          Add your CV link after uploading
+          Wenhui_Liu_CV.pdf to this repository.
+
+          <a href="Wenhui_Liu_CV.pdf"
+             target="_blank">
+            Academic CV
+          </a>
+          -->
+
+        </div>
+
       </div>
 
     </section>
 
-    <!-- About -->
+    <!-- About Me -->
+
     <section id="about">
+
       <h2>About Me</h2>
 
       <p>
-        I am an undergraduate researcher at
-        Peking University, focusing on medical
-        artificial intelligence and biomedical
-        signal analysis.
+        I am an undergraduate student majoring in
+        <strong>Medical Imaging Technology</strong>
+        at Peking University Health Science Center,
+        with an expected graduation date of 2028.
       </p>
 
       <p>
-        My research interests include biomedical
-        foundation models, representation learning,
-        physiological signal processing, and
-        generalizable machine learning methods
-        for healthcare applications.
+        I am currently conducting research in
+        medical artificial intelligence under
+        the supervision of
+        <strong>Prof. Shenda Hong</strong>
+        at Peking University.
       </p>
 
       <p>
-        I am particularly interested in developing
-        robust and reliable AI methods that can
-        bridge machine learning and clinical medicine.
+        My research interests include
+        biomedical foundation models,
+        representation learning,
+        multimodal learning,
+        and physiological signal analysis.
+        I am particularly interested in
+        developing generalizable and reliable
+        machine learning methods for
+        real-world healthcare applications.
       </p>
+
+      <p>
+        My long-term goal is to advance
+        the methodological foundations of
+        medical AI by bridging machine
+        learning, biomedical data, and
+        clinical applications.
+      </p>
+
     </section>
 
     <!-- Education -->
+
     <section id="education">
+
       <h2>Education</h2>
 
       <div class="entry">
+
         <div class="entry-title">
           Peking University
         </div>
 
         <div class="entry-meta">
-          Undergraduate Studies
+          Peking University Health Science Center
+          <br>
+          Expected Graduation: 2028
         </div>
 
         <p>
-          Biomedical Engineering and
-          Medical Artificial Intelligence
+          <strong>Undergraduate Major:</strong>
+          Medical Imaging Technology
         </p>
+
+        <p>
+          <strong>Research Focus:</strong>
+          Medical Artificial Intelligence
+          and Biomedical Machine Learning.
+        </p>
+
       </div>
+
     </section>
 
     <!-- Research Interests -->
+
     <section id="research">
+
       <h2>Research Interests</h2>
 
       <div class="research-tags">
-        <span class="tag">Medical AI</span>
-        <span class="tag">Foundation Models</span>
-        <span class="tag">Representation Learning</span>
-        <span class="tag">ECG Analysis</span>
-        <span class="tag">Biomedical Signal Processing</span>
-        <span class="tag">Multimodal Learning</span>
+
+        <span class="tag">
+          Medical Artificial Intelligence
+        </span>
+
+        <span class="tag">
+          Biomedical Foundation Models
+        </span>
+
+        <span class="tag">
+          Representation Learning
+        </span>
+
+        <span class="tag">
+          Multimodal Learning
+        </span>
+
+        <span class="tag">
+          Physiological Signal Analysis
+        </span>
+
+        <span class="tag">
+          Medical Image Analysis
+        </span>
+
+        <span class="tag">
+          Model Generalization
+        </span>
+
       </div>
+
     </section>
 
-    <!-- Publications -->
-    <section id="publications">
-      <h2>Publications & Manuscripts</h2>
+    <!-- Research Experience -->
 
-      <div class="entry">
+    <section id="experience">
+
+      <h2>Research Experience</h2>
+
+      <div class="experience">
+
         <div class="entry-title">
-          ECG-LabWAS: A Laboratory-Wide
-          Association Study Using a Fine-Tuned
-          Single-Lead Electrocardiogram
-          Foundation Model
+          Undergraduate Researcher
         </div>
 
         <div class="entry-meta">
-          Wenhui Liu et al. | 2026
+          Peking University
+          <br>
+          Supervisor: Prof. Shenda Hong
         </div>
 
         <p>
-          <strong>Status:</strong> Manuscript
+          Conducting research on medical AI,
+          electrocardiogram foundation models,
+          and machine learning methods
+          for clinical applications.
         </p>
 
-        <p>
-          First-listed co-first author.
-          Contributed to study design,
-          model development, and
-          manuscript preparation.
-        </p>
+        <ul>
+
+          <li>
+            Participated in study conception
+            and experimental design for
+            biomedical AI research.
+          </li>
+
+          <li>
+            Developed and fine-tuned
+            foundation models for
+            single-lead ECG analysis.
+          </li>
+
+          <li>
+            Conducted multi-task learning
+            experiments for laboratory
+            abnormality classification.
+          </li>
+
+          <li>
+            Performed independent
+            external validation and
+            model performance evaluation.
+          </li>
+
+          <li>
+            Contributed to scientific
+            manuscript writing and revision.
+          </li>
+
+        </ul>
+
       </div>
+
     </section>
 
-    <!-- Projects -->
-    <section id="projects">
-      <h2>Research Projects</h2>
+    <!-- Publications -->
 
-      <div class="project">
-        <h3>ECG-LabWAS</h3>
+    <section id="publications">
+
+      <h2>Publications & Manuscripts</h2>
+
+      <div class="entry">
+
+        <div class="entry-title">
+          ECG-LabWAS: A Laboratory-Wide
+          Association Study Using a
+          Fine-Tuned Single-Lead
+          Electrocardiogram Foundation Model
+        </div>
+
+        <p class="entry-meta">
+
+          <span class="author-name">
+            Wenhui Liu
+          </span>,
+          Yujie Xiao,
+          Gongzheng Tang, et al.
+
+        </p>
+
+        <div class="entry-meta">
+          2026
+        </div>
+
+        <span class="status">
+          Manuscript
+        </span>
 
         <p>
-          A laboratory-wide association study
-          using a fine-tuned single-lead ECG
-          foundation model.
+          <strong>
+            First-listed co-first author
+            (equal contribution).
+          </strong>
         </p>
 
         <p>
-          The study investigates associations
-          between ECG signals and laboratory
-          abnormalities through multi-task
-          learning and independent
+          This study explores the potential
+          of a fine-tuned single-lead ECG
+          foundation model for
+          laboratory-wide abnormality
+          screening and clinical
+          association analysis.
+        </p>
+
+        <!--
+        After your arXiv preprint is public,
+        add the verified link here.
+
+        Example:
+
+        <p>
+          <a href="YOUR_ARXIV_URL"
+             target="_blank">
+            arXiv Preprint
+          </a>
+        </p>
+        -->
+
+      </div>
+
+    </section>
+
+    <!-- Selected Research Projects -->
+
+    <section id="projects">
+
+      <h2>Selected Research Projects</h2>
+
+      <div class="project">
+
+        <h3>
+          ECG-LabWAS
+        </h3>
+
+        <p>
+          <strong>
+            Laboratory-Wide Association
+            Study Using a Single-Lead
+            ECG Foundation Model
+          </strong>
+        </p>
+
+        <p>
+          ECG-LabWAS investigates whether
+          single-lead ECG signals contain
+          information associated with
+          common clinical laboratory
+          abnormalities.
+        </p>
+
+        <p>
+          The project uses a fine-tuned
+          ECG foundation model for
+          multi-task laboratory
+          abnormality classification,
+          together with independent
           external validation.
         </p>
 
+        <ul>
+
+          <li>
+            Applied a pretrained
+            ECG foundation model
+            to laboratory-wide
+            abnormality screening.
+          </li>
+
+          <li>
+            Investigated 50 laboratory tests
+            covering 89 abnormality directions.
+          </li>
+
+          <li>
+            Developed models using
+            the MC-MED clinical cohort.
+          </li>
+
+          <li>
+            Evaluated generalization
+            using the independent
+            MIMIC-IV cohort.
+          </li>
+
+          <li>
+            Identified 33 abnormality
+            directions meeting the
+            study-defined screening
+            criteria in both cohorts.
+          </li>
+
+          <li>
+            Analyzed associations among
+            laboratory abnormalities,
+            model predictions, and
+            clinical outcomes.
+          </li>
+
+        </ul>
+
         <p>
-          <strong>Keywords:</strong>
+          <strong>Research Areas:</strong>
           ECG Foundation Models,
+          Medical AI,
           Multi-task Learning,
-          External Validation,
-          Clinical AI.
+          External Validation.
         </p>
+
       </div>
+
     </section>
 
+    <!-- Contact -->
+
     <section id="contact">
-  <h2>Contact</h2>
 
-  <p>
-    <strong>Affiliation:</strong>
-    Peking University Health Science Center
-  </p>
+      <h2>Contact</h2>
 
-  <p>
-    <strong>GitHub:</strong>
-    <a href="https://github.com/Wenhuiliu-1"
-       target="_blank"
-       rel="noopener noreferrer">
-      github.com/Wenhuiliu-1
-    </a>
-  </p>
+      <p class="contact-item">
+        <strong>Affiliation:</strong>
+        Peking University Health Science Center
+      </p>
 
-  <p>
-    <strong>Academic Email:</strong>
-    Add your public academic email here
-  </p>
-</section>
+      <p class="contact-item">
+        <strong>GitHub:</strong>
+
+        <a href="https://github.com/Wenhuiliu-1"
+           target="_blank"
+           rel="noopener noreferrer">
+          github.com/Wenhuiliu-1
+        </a>
+      </p>
+
+      <!--
+      Uncomment the section below
+      when you are ready to publish
+      your academic email.
+
+      <p class="contact-item">
+        <strong>Academic Email:</strong>
+
+        <a href="mailto:your-email@example.com">
+          your-email@example.com
+        </a>
+      </p>
+      -->
+
+    </section>
+
+    <!-- Footer -->
 
     <footer>
-      © 2026 Wenhui Liu.
-      Built with GitHub Pages.
+
+      <p>
+        &copy; 2026 Wenhui Liu.
+        All rights reserved.
+      </p>
+
+      <p>
+        Hosted on GitHub Pages.
+      </p>
+
     </footer>
 
   </main>
